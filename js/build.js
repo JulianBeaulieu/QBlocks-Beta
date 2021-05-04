@@ -1,8 +1,11 @@
+// TODO: https://konvajs.org/docs/sandbox/Drop_DOM_Element.html
+
+
 // var width = window.innerWidth;
 // var height = window.innerHeight;
 // window.onresize = function(){ location.reload(); }
 var width = document.getElementById('canvas-div').clientWidth;
-var height = (window.innerHeight * 2/3);
+var height = (window.innerHeight * 0.5);
 
 console.log("Height: " + height + " | Width: " + width);
 var shadowOffset = 20;
@@ -209,6 +212,57 @@ stage.on('contentContextmenu', (e) => {
   e.evt.preventDefault();
 });
 
+var helpButton = new Konva.Label({
+  x: 0,
+  y: 0,
+  opacity: 0.75
+});
+
+helpButton.add(new Konva.Tag({
+  fill: '#b1b1b1',
+  lineJoin: 'round',
+  shadowColor: '#b1b1b1',
+  shadowBlur: 5,
+  shadowOffset: 10,
+  shadowOpacity: 0.5,
+  cornerRadius: 5
+}));
+
+helpButton.add(new Konva.Text({
+  text: 'Instructions',
+  fontFamily: 'Calibri',
+  fontSize: 18,
+  padding: 5,
+  fill: 'black'
+}));
+
+helpButton.on('click', () => {
+  document.getElementById('#headerVideoLink').magnificPopup({
+    type:'inline',
+    midClick: true // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
+  });
+})
+
+helpButton.on('mouseover', function () {
+  this.fill = 'red';
+  layer.draw();
+  gridLayer.draw();
+});
+
+helpButton.on('clmouseoutick', function () {
+  this.fill = 'red';
+  layer.draw();
+  gridLayer.draw();
+});
+
+layer.add(helpButton)
+gridLayer.add(helpButton);
+
+gridLayer.draw();
+
+
+
+
 /*############################################################################*/
 /*####################### Colision Detection #################################*/
 /*############################################################################*/
@@ -365,10 +419,10 @@ function getShapes() {
     });
   });
 
-  if(document.getElementById("start-button-tag").innerText.toLowerCase() === "start"){
-    document.getElementById("start-button-tag").innerText = "Continue";
-    hideUsergenerated();
-  }
+  // if(document.getElementById("start-button-tag").innerText.toLowerCase() === "start"){
+  //   document.getElementById("start-button-tag").innerText = "Continue";
+  //   hideUsergenerated();
+  // }
 
   var matchedObjects = findAbove(gates, particles);
 
