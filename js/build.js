@@ -236,18 +236,30 @@ helpButton.add(new Konva.Text({
   fill: 'black'
 }));
 
-helpButton.on('click', () => {
-  document.getElementById('#headerVideoLink').magnificPopup({
-    type:'inline',
-    midClick: true // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
-  });
-})
-
-helpButton.on('mouseover', function () {
-  this.fill = 'red';
-  layer.draw();
-  gridLayer.draw();
-});
+// helpButton.on('click', () => {
+//   document.getElementById('#headerVideoLink').magnificPopup({
+//     type:'inline',
+//     midClick: true // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
+//   });
+// })
+//
+// helpButton.on('mouseover', function () {
+//   this.fill = 'red';
+//   document.getElementById('#headerVideoLink').magnificPopup({
+//     type:'inline',
+//     midClick: true // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
+//   });
+//   layer.draw();
+//   gridLayer.draw();
+// });
+//
+// $( document ).ready(function() {
+//   $('#headerVideoLink').magnificPopup({
+//     type:'inline',
+//     midClick: true // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
+//   });
+//
+// });
 
 helpButton.on('clmouseoutick', function () {
   this.fill = 'red';
