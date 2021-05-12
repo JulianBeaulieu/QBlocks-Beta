@@ -38,9 +38,22 @@
   height: 220px;
 }
 
+.border-bottom {
+  border-bottom: 1px dashed black;
+  width: 100%;
+}
+
+.border-middle {
+  background-image: linear-gradient(to bottom, black 10%, rgba(255, 255, 255, 0) 0%);
+  background-position: left;
+  background-size: 1px 10px;
+  background-repeat: repeat-y;
+  height: 180px;
+}
+
 .center-divs{
   position: absolute;
-  left: 15%;
+  left: 5%;
 }
 
 .green-line{
