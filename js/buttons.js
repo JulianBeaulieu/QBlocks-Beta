@@ -39,12 +39,12 @@ function createPIPE_Gate(){
 }
 
 function createBLACK_BALL(){
-  newGate(gateX,  gateY, 2, 2, layer, stage, 'https://julianBeaulieu.com/QBlocks-Beta/img/black.png', 'black', 'user', 'circle');
+  newBall(blockSnapSize * ballX, blockSnapSize * ballY, 0.5, layer, stage, 'black', 'user');
   stage.add(layer);
 }
 
 function createWHITE_BALL(){
-  newGate(gateX,  gateY, 2, 2, layer, stage, 'https://julianBeaulieu.com/QBlocks-Beta/img/white.png', 'white', 'user', 'circle');
+  newBall(blockSnapSize * ballX, blockSnapSize * ballY, 0.5, layer, stage, 'white', 'user');
   stage.add(layer);
 }
 
