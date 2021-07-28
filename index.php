@@ -14,9 +14,6 @@
     <link rel="profile" href="http://gmpg.org/xfn/11">
     <link rel="pingback" href="https://quantumcurious.org/xmlrpc.php">
     <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'/>
-    <meta http-equiv=“Pragma” content=”no-cache”>
-    <meta http-equiv=“Expires” content=”-1″>
-    <meta http-equiv=“CACHE-CONTROL” content=”NO-CACHE”>
     <!-- Optimized by SG Optimizer plugin version - 5.7.20 -->
     <!-- This site is optimized with the Yoast SEO plugin v16.0.2 - https://yoast.com/wordpress/plugins/seo/ -->
     <title>Learning Quantum Computing Using Misty States</title>
@@ -41,6 +38,7 @@
     <link rel="alternate" type="application/rss+xml" title="Quantum Curious &raquo; Comments Feed" href="https://quantumcurious.org/comments/feed/"/>
     <!-- This site uses the Google Analytics by MonsterInsights plugin v7.17.0 - Using Analytics tracking - https://www.monsterinsights.com/ -->
     <script src="//www.googletagmanager.com/gtag/js?id=UA-177271239-1" type="text/javascript" data-cfasync="false"></script>
+
     <script type="text/javascript" data-cfasync="false">
     var mi_version = '7.17.0';
     var mi_track_user = true;
@@ -563,17 +561,25 @@
     <!-- ############################################################################################################ -->
     <!-- ############################################################################################################ -->
     <!-- ############################################################################################################ -->
+
+    <!--    <link rel="stylesheet" href="css/custom.css?v=--><?//=filemtime("./css/custom.css")?><!--"/>-->
+    <!--    <script src="js/custom.js?v=--><?//=filemtime("js/custom.js")?><!--"></script>-->
+
     <meta charset="utf-8">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link rel="stylesheet" type="text/css" href="css/button.css">
-    <link rel="stylesheet" type="text/css" href="css/popup-modal.css">
-    <link rel="stylesheet" type="text/css" href="css/loading.css">
+    <link rel="stylesheet" href="css/button.css?v=<?=filemtime('css/button.css'); ?>" type="text/css" />
+    <link rel="stylesheet" href="css/debug-lines.css?v=<?=filemtime('css/debug-lines.css'); ?>" type="text/css" />
+    <link rel="stylesheet" href="css/fullwidth-div.css?v=<?=filemtime('css/fullwidth-div.css'); ?>" type="text/css" />
+    <link rel="stylesheet" href="css/loading-indicator.css?v=<?=filemtime('css/loading-indicator.css'); ?>" type="text/css" />
+    <link rel="stylesheet" href="css/main.css?v=<?=filemtime('css/main.css'); ?>" type="text/css" />
+    <link rel="stylesheet" href="css/canvas.css?v=<?=filemtime('css/canvas.css'); ?>" type="text/css" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
     <script src="https://unpkg.com/konva@7.2.5/konva.min.js"></script>
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
@@ -683,22 +689,6 @@
                     </div>
 
                 </div>
-                <div class="block-content">
-                    <div class="container">
-                        <div class="panel row">
-
-                            <div class="panel-center col-xs-12">
-                                <article id="post-997" class="post-997 page type-page status-publish">
-
-                                    <div class="entry-content post-content">
-
-                                        <div id="vc_row-607a847f0a6dc" class="vc_row wpb_row vc_row-fluid vc_custom_1598445692319 thegem-custom-607a847f0a69c3842">
-                                            <div class="wpb_column vc_column_container vc_col-sm-12 thegem-custom-607a847f0af527923">
-                                                <div class="vc_column-inner ">
-                                                    <div class="wpb_wrapper">
-
-                                                        <div class="wpb_text_column wpb_content_element ">
-                                                            <div class="wpb_wrapper">
 
 
 <!-- ############################################################################################################ -->
@@ -718,353 +708,228 @@
 <!-- ############################################################################################################ -->
 <!-- ############################################################################################################ -->
 
-                                                                <!-- Start Modals -->
-                                                                <div id="introductionModal" class="modal">
-                                                                    <div class="modal-content">
-                                                                        <span class="close-modal">&times;</span>
-                                                                        <iframe class="iframe-modal embed-responsive-item" width=100% height=100% src="https://www.youtube.com/embed/u9E_f2gmAns" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                                                                    </div>
-                                                                </div>
 
-                                                                <div id="instructionModal" class="modal">
-                                                                    <div class="modal-content">
-                                                                        <span class="close-modal">&times;</span>
-                                                                        <iframe class="iframe-modal embed-responsive-item" width=100% height=100% src="https://www.youtube.com/embed/wiz9YsmEpvs" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                                                                    </div>
-                                                                </div>
+                <br style="clear: both" id="misty-states-canvas">
 
-                                                                <div id="mistyStatesModal" class="modal">
-                                                                    <div class="modal-content">
-                                                                        <span class="close-modal">&times;</span>
-                                                                        <iframe class="iframe-modal embed-responsive-item" width=100% height=100% src="https://www.youtube.com/embed/r0HEQMhgq5U" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                                                                    </div>
-                                                                </div>
+                <div class="total-canvas expand-div-across-full-width">
+                  <!-- To make child exceed parent, add  'expand-child-past-parent' to class-->
+                    <div id="container-flex">
 
-                                                                <!-- End Modals -->
-
-                                                                <div class="expand-child-marginally-past-parent"><!-- To make child exceed parent, add  'expand-child-past-parent' to class-->
-                                                                  <div class="container-flex">
-                                                                    <div class="row vertical-divider">
-                                                                        <div class="col-sm-12 col-md-12 col-lg-12">
-
-
-
-                                                                            <div class="well spacer mediumControlls" style="height: 260px;">
-                                                                                <div class="box">
-
-                                                                                    <!-- Instructions -->
-                                                                                    <div class="col-md-2 col-lg-2 border-right largeControlls">
-                                                                                        <div style="width: 160px;">
-                                                                                            <div class="row ">
-<!--                                                                                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" id="introduction-button">-->
-<!--                                                                                                    <a class="button-Instruction instruction" onclick = "introduction_Modal.style.display = 'block';">-->
-<!--                                                                                                        <p class="my-float">Introduction</p>-->
-<!--                                                                                                    </a>-->
-<!--                                                                                                </div>-->
-                                                                                                <div class="col-sm-12 col-md-12 col-lg-12">
-                                                                                                    <a href="https://www.youtube.com/channel/UCpB6QhTV4t1bVyiJ5niGvzQ" target="_blank" rel="noopener noreferrer" class="button-Instruction instruction">
-                                                                                                        <p class="my-float">Start Here</p>
-                                                                                                    </a>
-                                                                                                </div>
-
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-
-                                                                                    <!-- Simulation Controls -->
-                                                                                    <div class="col-xs-3 col-sm-3 col-md-2 col-lg-2 border-right " >
-                                                                                        <div style="width: 130px;">
-                                                                                            <div class="row row-bottom-margin controll-box">
-                                                                                                Operations
-                                                                                            </div>
-                                                                                            <div class="row ">
-                                                                                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6" >
-                                                                                                    <a class="start-stop-button start my-float" onclick = "start()" id="start-button">
-                                                                                                        <i class="material-icons" style="font-size:36px">play_arrow</i>
-                                                                                                    </a>
-                                                                                                </div>
-                                                                                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6" id="stop-button">
-                                                                                                    <a class="start-stop-button reset my-float" onclick = "reset()">
-                                                                                                        <i class="material-icons" style="font-size:36px">refresh</i>
-                                                                                                    </a>
-                                                                                                </div>
-                                                                                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" id="clear-button">
-                                                                                                    <a class="button-clearAll start" onclick = "clearAll()">
-                                                                                                        <p class="my-float">Clear Canvas</p>
-                                                                                                    </a>
-                                                                                                </div>
-                                                                                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" id="">
-                                                                                                    <input type="checkbox"  id="checkIfHidden" onclick="toggleHideOutput();">
-                                                                                                    <label class="toggleP" for="checkIfHidden">Hide output</label>
-                                                                                                </div>
-
-
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-
-                                                                                    <!-- Balls -->
-                                                                                    <div class="col-xs-2 col-sm-2 col-md-1 col-lg-1 border-right " >
-                                                                                        <div style="width: 70px;" class="">
-                                                                                            <div class="row row-bottom-margin controll-box" >
-                                                                                                Balls
-                                                                                            </div>
-                                                                                            <div class="row ">
-                                                                                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                                                                                                    <a  id="drag-white" class="button white-ball" draggable="true">
-                                                                                                        <p class="my-float">W</p>
-                                                                                                    </a>
-                                                                                                    <a id="drag-black" class="button black-ball" draggable="true">
-                                                                                                        <p class="my-float">B</p>
-                                                                                                    </a>
-                                                                                                </div>
-
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-
-                                                                                    <!-- Gates -->
-                                                                                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 border-right">
-                                                                                        <div class="row controll-box">
-                                                                                            Classical Gates
-                                                                                        </div>
-                                                                                        <div class="row row-bottom-margin ">
-                                                                                            <div class="col-sm-4 col-md-4 col-lg-4 center-divs">
-                                                                                                <div class="border-bottom">
-                                                                                                    <a id="drag-not">
-                                                                                                        <img class="button-img" src="img/not.png" draggable="true">
-                                                                                                    </a>
-                                                                                                </div>
-                                                                                                <a id="drag-swap">
-                                                                                                    <img class="button-img" src="img/swap.png" draggable="true">
-                                                                                                </a>
-                                                                                            </div>
-                                                                                            <div class="col-sm-6 col-md-6 col-lg-6 center-divs border-middle">
-                                                                                                <div class="border-bottom">
-                                                                                                    <a id="drag-cnot">
-                                                                                                        <img class="button-img" src="img/cnot.png" draggable="true">
-                                                                                                    </a>
-                                                                                                </div>
-                                                                                                <a id="drag-cswap">
-                                                                                                    <img class="button-img" src="img/cswap.png" draggable="true">
-                                                                                                </a>
-                                                                                                <a id="drag-ccswap">
-                                                                                                    <img class="button-img" src="img/ccswap.png" draggable="true">
-                                                                                                </a>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-
-                                                                                    <!-- Mists -->
-                                                                                    <div class="col-xs-2 col-sm-2 col-md-3 col-lg-3 ">
-                                                                                        <div class="row controll-box">
-                                                                                            Misty States
-                                                                                        </div>
-                                                                                        <div class="row row-bottom-margin">
-                                                                                            <div class="col-sm-4 col-md-4 col-lg-4 center-divs">
-                                                                                                <a id="drag-pete">
-                                                                                                    <img class="button-img" src="img/pete.png" draggable="true">
-                                                                                                </a>
-                                                                                                <a id="drag-pipe">
-                                                                                                    <img class="button-img" src="img/pipe.png" draggable="true">
-                                                                                                </a>
-                                                                                            </div>
-                                                                                            <div class="col-sm-6 col-md-6 col-lg-6 center-divs">
-                                                                                                <a id="drag-wbmist">
-                                                                                                    <img class="button-img" src="img/wb.png" draggable="true">
-                                                                                                </a>
-                                                                                                <a id="drag-wnegbmist">
-                                                                                                    <img class="button-img" src="img/wnegb.png" draggable="true">
-                                                                                                </a>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-
-
-                                                                            <div class="loader-wrapper hidden" id="loading-sign">
-                                                                                <span class="loader"><span class="loader-inner"></span></span>
-                                                                            </div>
-
-
-                                                                            <div class="min-well well">
-                                                                                <div class="canvas-box" id="canvas-div" >
-                                                                                  <div id="canvas"></div>
-                                                                                </div>
-                                                                            </div>
-
-                                                                            <div class="well smallControlls" style="height: 74vw;">
-                                                                                <div class="" style="height: 4vh;">
-                                                                                    <a href="https://www.youtube.com/channel/UCpB6QhTV4t1bVyiJ5niGvzQ" target="_blank" rel="noopener noreferrer" class="button-Instruction-small-screen instruction">
-                                                                                        <p class="">Start Here</p>
-                                                                                    </a>
-                                                                                </div>
-                                                                                <div class="box my-float">
-                                                                                    <!-- Simulation Controls -->
-                                                                                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3" >
-                                                                                        <div>
-                                                                                            <div class="row row-bottom-margin controll-box">
-                                                                                                Operations
-                                                                                            </div>
-                                                                                            <div class="row ">
-                                                                                                <div class="col-sm-6 col-md-6 col-lg-6" >
-                                                                                                    <a class="start-stop-button start my-float" onclick = "start()" id="start-button">
-                                                                                                        <i class="material-icons" style="font-size:10vw">play_arrow</i>
-                                                                                                    </a>
-                                                                                                </div>
-                                                                                                <div class="col-sm-6 col-md-6 col-lg-6" id="stop-button">
-                                                                                                    <a class="start-stop-button reset my-float" onclick = "reset()">
-                                                                                                        <i class="material-icons" style="font-size:10vw">refresh</i>
-                                                                                                    </a>
-                                                                                                </div>
-                                                                                                <div class="col-sm-6 col-md-6 col-lg-6" id="clear-button">
-                                                                                                    <a class="button-clearAll start my-float" onclick = "clearAll()">
-                                                                                                        <i class="material-icons" style="font-size:10vw">delete</i>
-                                                                                                    </a>
-                                                                                                </div>
-                                                                                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" id="">
-                                                                                                    <input type="checkbox" checked="checked" id="checkIfHidden" onclick="toggleHideOutput();">
-                                                                                                    <label class="toggleP" for="checkIfHidden">Hide output</label>
-                                                                                                </div>
-
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-
-                                                                                    <!-- Balls -->
-                                                                                    <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1" >
-                                                                                        <div>
-                                                                                            <div class="row row-bottom-margin controll-box" >
-                                                                                                Balls
-                                                                                            </div>
-                                                                                            <div class="row">
-                                                                                                <a  id="drag-white" class="button white-ball" draggable="true" onclick="createWHITE_BALL()">
-                                                                                                    <p class="my-float">W</p>
-                                                                                                </a>
-                                                                                                <a id="drag-black" class="button black-ball" draggable="true" onclick="createBLACK_BALL()">
-                                                                                                    <p class="my-float">B</p>
-                                                                                                </a>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-
-                                                                                    <!-- Gates -->
-                                                                                    <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
-                                                                                        <div class="row controll-box">
-                                                                                            Classical Gates
-                                                                                        </div>
-                                                                                        <div class="row row-bottom-margin ">
-                                                                                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 center-divs">
-                                                                                                <a id="drag-not" onclick="createNOT_Gate()">
-                                                                                                    <img class="button-img" src="img/not.png" draggable="true">
-                                                                                                </a>
-                                                                                                <a id="drag-swap" onclick="createSWAP_Gate()">
-                                                                                                    <img class="button-img" src="img/swap.png" draggable="true">
-                                                                                                </a>
-                                                                                                <a id="drag-ccswap" onclick="createCCSWAP_Gate()">
-                                                                                                    <img class="button-img" src="img/ccswap.png" draggable="true">
-                                                                                                </a>
-                                                                                            </div>
-                                                                                            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 center-divs">
-                                                                                                <a id="drag-cnot" onclick="createCNOT_Gate()">
-                                                                                                    <img class="button-img" src="img/cnot.png" draggable="true">
-                                                                                                </a>
-                                                                                                <a id="drag-cswap" onclick="createCSWAP_Gate()">
-                                                                                                    <img class="button-img" src="img/cswap.png" draggable="true">
-                                                                                                </a>
-
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-
-                                                                                    <!-- Mists -->
-                                                                                    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-                                                                                        <div class="row controll-box">
-                                                                                            Misty States
-                                                                                        </div>
-                                                                                        <div class="row row-bottom-margin">
-                                                                                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 center-divs">
-                                                                                                <a id="drag-pete" onclick="createPETE_Gate()">
-                                                                                                    <img class="button-img" src="img/pete.png" draggable="true">
-                                                                                                </a>
-                                                                                                <a id="drag-pipe" onclick="createPIPE_Gate()">
-                                                                                                    <img class="button-img" src="img/pipe.png" draggable="true">
-                                                                                                </a>
-                                                                                                <a id="drag-wbmist" onclick="createWBMist()">
-                                                                                                    <img class="button-img" src="img/wb.png" draggable="true">
-                                                                                                </a>
-                                                                                                <a id="drag-wnegbmist" onclick="createWNegBMist()">
-                                                                                                    <img class="button-img" src="img/wnegb.png" draggable="true">
-                                                                                                </a>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-
-                                                                            </div>
-
-                                                                        </div>
-                                                                    </div>
-                                                                  </div>
-
-                                                                  <p style="font-size:16px">Created by <a href="https://www.linkedin.com/in/nathanschor" target="_blank">Nathan Schor</a>, <a href="https://julianbeaulieu.com/" target="_blank">Julian Beaulieu</a>, and <a href="https://sunilsingh.me/" target="_blank">Sunil Singh</a> </p>
-                                                                </div>
-
-
-
-                                                                <!-- Script Imports -->
-                                                                <script src="js/GatesAndParticles/Ball.js"></script>
-                                                                <script src="js/GatesAndParticles/Not.js"></script>
-                                                                <script src="js/GatesAndParticles/CNot.js"></script>
-                                                                <script src="js/GatesAndParticles/CCSwap.js"></script>
-                                                                <script src="js/GatesAndParticles/Swap.js"></script>
-                                                                <script src="js/GatesAndParticles/CSwap.js"></script>
-                                                                <script src="js/GatesAndParticles/Pete.js"></script>
-                                                                <script src="js/GatesAndParticles/Mist.js"></script>
-                                                                <script src="js/GatesAndParticles/Pipe.js"></script>
-                                                                <script src="js/main.js"></script>
-                                                                <script src="js/buttons.js"></script>
-                                                                <script src="js/popup-modal.js"></script>
-
-
-
-
-  <!-- ############################################################################################################ -->
-  <!-- ############################################################################################################ -->
-  <!-- ############################################################################################################ -->
-  <!-- ############################################################################################################ -->
-  <!-- ############################################################################################################ -->
-  <!-- ############################################################################################################ -->
-  <!-- ############################################################################################################ -->
-  <!-- ############################################################################################################ -->
-  <!-- ############################################################################################################ -->
-  <!-- ############################################################################################################ -->
-  <!-- ############################################################################################################ -->
-  <!-- ############################################################################################################ -->
-  <!-- ############################################################################################################ -->
-  <!-- ############################################################################################################ -->
-  <!-- ############################################################################################################ -->
-  <!-- ############################################################################################################ -->
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                            <!---->
+                            <main>
+                                <aside class="left standardControlls">
+                                        <!--  Gates Go Here-->
+                                        <div class="row frame-around-balls">
+                                            <div class="elements-box space-bottom">
+                                                Balls
+                                            </div>
+                                            <div class="center-elements">
+                                                <a id="drag-white" onmouseenter="over('White Ball')" onmouseleave="over('Tool-Tips')">
+                                                    <img class="button-img" src="img/white.png" draggable="true">
+                                                </a>
+                                                <a id="drag-black" onmouseenter="over('Black Ball')" onmouseleave="over('Tool-Tips')">
+                                                    <img class="button-img" src="img/black.png" draggable="true">
+                                                </a>
                                             </div>
                                         </div>
+                                        <div class="row frame-around-gates">
+                                            <div class="elements-box space-bottom">
+                                                Classical Gates
+                                            </div>
+                                            <div class="center-elements">
+                                                <a id="drag-not" onmouseenter="over('Not Gate')" onmouseleave="over('Tool-Tips')">
+                                                    <img class="button-img" src="img/not.png" draggable="true">
+                                                </a>
+                                                <a id="drag-swap" onmouseenter="over('Swap Gate')" onmouseleave="over('Tool-Tips')">
+                                                    <img class="button-img" src="img/swap.png" draggable="true">
+                                                </a>
+                                                <a id="drag-cnot" onmouseenter="over('CNot Gate')" onmouseleave="over('Tool-Tips')">
+                                                    <img class="button-img" src="img/cnot.png" draggable="true">
+                                                </a>
+                                                <a id="drag-cswap" onmouseenter="over('CSwap Gate')" onmouseleave="over('Tool-Tips')">
+                                                    <img class="button-img" src="img/cswap.png" draggable="true">
+                                                </a>
+
+                                                <a id="drag-ccswap" onmouseenter="over('CCSwap Gate')" onmouseleave="over('Tool-Tips')">
+                                                    <img class="button-img" src="img/ccswap.png" draggable="true">
+                                                </a>
+                                            </div>
+                                        </div>
+
+                                        <div class="row frame-around-misty">
+                                            <div class="elements-box space-bottom">
+                                                Misty States
+                                            </div>
+                                            <div class="center-elements">
+                                                <a id="drag-pete" onmouseenter="over('Pete Gate')" onmouseleave="over('Tool-Tips')">
+                                                    <img class="button-img" src="img/pete.png" draggable="true">
+                                                </a>
+                                                <a id="drag-pipe" onmouseenter="over('Pipe Gate')" onmouseleave="over('Tool-Tips')">
+                                                    <img class="button-img" src="img/pipe.png" draggable="true">
+                                                </a>
+                                                <a id="drag-wbmist" onmouseenter="over('WB Mist')" onmouseleave="over('Tool-Tips')">
+                                                    <img class="button-img" src="img/wb.png" draggable="true">
+                                                </a>
+                                                <a id="drag-wnegbmist" onmouseenter="over('WNB Mist')" onmouseleave="over('Tool-Tips')">
+                                                    <img class="button-img" src="img/wnegb.png" draggable="true">
+                                                </a>
+                                            </div>
+                                        </div>
+
+                                        <div class="row tool-tips">
+                                            <h2 class="heading">Hints</h2>
+                                            <h3 id="title" class="title"></h3>
+                                            <p id="description" class="description">Hover over a gate for more information.</p>
+                                            <!----><!----><!---->
+                                        </div>
+                                </aside>
+                                <section class="center">
+                                    <!--  Focus of the webpage-->
+                                    <div class="loader-wrapper hidden" id="loading-sign">
+                                        <span class="loader"><span class="loader-inner"></span></span>
                                     </div>
-                                    <!-- .entry-content -->
 
-                                </article>
-                                <!-- #post-## -->
+                                    <!--  Mobile Elements Go Here-->
+                                    <div class="row left-space scrollmenu mobileControlls">
+                                        <div class="elements-box-mobile ">
+                                            Balls
+                                        </div>
+                                        <a id="drag-white-mobile" onclick="createWHITE_BALL()">
+                                            <img class="button-img-mobile" src="img/white.png" draggable="true">
+                                        </a>
+                                        <a id="drag-black-mobile" onclick="createBLACK_BALL()">
+                                            <img class="button-img-mobile" src="img/black.png" draggable="true">
+                                        </a>
+                                        <div class="left-space elements-box-mobile border-left" style="padding-left: 20px; padding-right: 10px">
+                                            Classical Gates
+                                        </div>
+                                        <a id="drag-not-mobile" onclick="createNOT_Gate()">
+                                            <img class="button-img" src="img/not.png" draggable="true">
+                                        </a>
+                                        <a id="drag-swap-mobile" onclick="createSWAP_Gate()">
+                                            <img class="button-img" src="img/swap.png" draggable="true">
+                                        </a>
+                                        <a id="drag-cnot-mobile" onclick="createCNOT_Gate()">
+                                            <img class="button-img" src="img/cnot.png" draggable="true">
+                                        </a>
+                                        <a id="drag-cswap-mobile" onclick="createCSWAP_Gate()">
+                                            <img class="button-img" src="img/cswap.png" draggable="true">
+                                        </a>
 
-                            </div>
+                                        <a id="drag-ccswap-mobile" class="right-space" onclick="createCCSWAP_Gate()">
+                                            <img class="button-img" src="img/ccswap.png" draggable="true">
+                                        </a>
+                                        <div class="elements-box-mobile border-left" style="padding-left: 20px; padding-right: 10px">
+                                            Misty States
+                                        </div>
+                                        <a id="drag-pete-mobile" onclick="createPETE_Gate()">
+                                            <img class="button-img" src="img/pete.png" draggable="true">
+                                        </a>
+                                        <a id="drag-pipe-mobile" onclick="createPIPE_Gate()">
+                                            <img class="button-img" src="img/pipe.png" draggable="true">
+                                        </a>
+                                        <a id="drag-wbmist-mobile" onclick="createWBMist()">
+                                            <img class="button-img" src="img/wb.png" draggable="true">
+                                        </a>
+                                        <a id="drag-wnegbmist-mobile" onclick="createWNegBMist()">
+                                            <img class="button-img" src="img/wnegb.png" draggable="true">
+                                        </a>
+                                    </div>
 
-                        </div>
+                                    <!-- The Canvas-->
+                                    <div class="canvas-inset">
+                                        <div class="canvas-box" id="canvas-div" >
+                                            <div class="canvas-box" id="canvas" ></div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Controls Go Here-->
+                                    <div class="row left-space scrollmenu" id="controlStrip">
+
+                                        <div class="vertical-spacer"></div>
+                                        <div class="left-space controlls-box-mobile ">Process:</div>
+
+                                        <a class="button-1x1 left-space green" onclick = "runNext()" onmouseenter="over('Run')" onmouseleave="over('Tool-Tips')" id="playButton">
+                                            <p class="">Run</p>
+                                        </a>
+                                        <a class="button-1x1 left-space green border-right" onclick = "runAll()" onmouseenter="over('Forward')" onmouseleave="over('Tool-Tips')">
+                                            <p class="">Run All</p>
+                                        </a>
+                                        <a class="button-1x1 left-space green right-space" onclick = "goBack()" onmouseenter="over('Go Back')" onmouseleave="over('Tool-Tips')">
+                                            <p class="">Undo</p>
+                                        </a>
+
+                                        <div class="vertical-spacer"></div>
+                                        <div class="left-space controlls-box-mobile ">Clear:</div>
+                                        <a class="button-1x1 left-space orange" onclick = "clearSimulation()" onmouseenter="over('Remove Output')" onmouseleave="over('Tool-Tips')">
+                                            <p class="">Output</p>
+                                        </a>
+                                        <a class="button-1x1 left-space orange" onclick = "clearAllBallsAndMists()" onmouseenter="over('Remove All Balls')" onmouseleave="over('Tool-Tips')">
+                                            <p class="">Balls</p>
+                                        </a>
+                                        <a class="button-1x1 left-space orange right-space" onclick = "clearCanvas()" onmouseenter="over('Clear Canvas')" onmouseleave="over('Tool-Tips')">
+                                            <p class="">Canvas</p>
+                                        </a>
+                                        <div class="vertical-spacer"></div>
+                                        <label class="checkbox_container left-space space-top right-space" onmouseenter="over('Hide output')" onmouseleave="over('Tool-Tips')">Hide output
+                                            <input type="checkbox" class="red-line" id="checkIfHidden" onclick="toggleHideOutput();">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <div class="vertical-spacer"></div>
+                                        <a href="https://www.youtube.com/channel/UCpB6QhTV4t1bVyiJ5niGvzQ" target="_blank" rel="noopener noreferrer" class="button-1-5x1 blue left-space right-space" id="tutorials-button" onmouseenter="over('Tutorials')" onmouseleave="over('Tool-Tips')">
+                                            <p class="">Tutorials</p>
+                                        </a>
+                                        <div class="vertical-spacer"></div>
+                                        <a class="button-2-5x1 left-space gray right-space" href="https://quantumcurious.org/feedback/" target="_blank" rel="noopener noreferrer">
+                                            <p class="">Comments/Feedback</p>
+                                        </a>
+                                        <div class="vertical-spacer"></div>
+                                    </div>
+                                </section>
+                            </main>
 
                     </div>
+                    <br style="clear: both">
+                    <p class="built-by-note">Created by <a href="https://www.linkedin.com/in/nathanschor" target="_blank">Nathan Schor</a> and <a href="https://sunilsingh.me/" target="_blank">Sunil Singh</a>.</p>
+
                 </div>
-                <!-- .block-content -->
+
+
+                <!-- Script Imports -->
+
+                <script src="js/GatesAndParticles/Ball.js?v=<?=filemtime('js/GatesAndParticles/Ball.js'); ?>"></script>
+                <script src="js/GatesAndParticles/Not.js?v=<?=filemtime('js/GatesAndParticles/Not.js'); ?>"></script>
+                <script src="js/GatesAndParticles/CNot.js?v=<?=filemtime('js/GatesAndParticles/CNot.js'); ?>"></script>
+                <script src="js/GatesAndParticles/CCSwap.js?v=<?=filemtime('js/GatesAndParticles/CCSwap.js'); ?>"></script>
+                <script src="js/GatesAndParticles/Swap.js?v=<?=filemtime('js/GatesAndParticles/Swap.js'); ?>"></script>
+                <script src="js/GatesAndParticles/CSwap.js?v=<?=filemtime('js/GatesAndParticles/CSwap.js'); ?>"></script>
+                <script src="js/GatesAndParticles/Pete.js?v=<?=filemtime('js/GatesAndParticles/Pete.js'); ?>"></script>
+                <script src="js/GatesAndParticles/Mist.js?v=<?=filemtime('js/GatesAndParticles/Mist.js'); ?>"></script>
+                <script src="js/GatesAndParticles/Pipe.js?v=<?=filemtime('js/GatesAndParticles/Pipe.js'); ?>"></script>
+                <script src="js/canvas.js?v=<?=filemtime('js/canvas.js'); ?>"></script>
+                <script src="js/buttons.js?v=<?=filemtime('js/buttons.js'); ?>"></script>
+                <script src="js/center-canvas.js?v=<?=filemtime('js/center-canvas.js'); ?>"></script>
+                <script src="js/tooltips.js?v=<?=filemtime('js/tooltips.js'); ?>"></script>
+                <script src="js/scroll-to-center.js?v=<?=filemtime('js/scroll-to-center.js'); ?>"></script>
+
+
+  <!-- ############################################################################################################ -->
+  <!-- ############################################################################################################ -->
+  <!-- ############################################################################################################ -->
+  <!-- ############################################################################################################ -->
+  <!-- ############################################################################################################ -->
+  <!-- ############################################################################################################ -->
+  <!-- ############################################################################################################ -->
+  <!-- ############################################################################################################ -->
+  <!-- ############################################################################################################ -->
+  <!-- ############################################################################################################ -->
+  <!-- ############################################################################################################ -->
+  <!-- ############################################################################################################ -->
+  <!-- ############################################################################################################ -->
+  <!-- ############################################################################################################ -->
+  <!-- ############################################################################################################ -->
+  <!-- ############################################################################################################ -->
+
 
             </div>
             <!-- #main-content -->
